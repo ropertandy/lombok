@@ -133,6 +133,7 @@ img {
     margin-right: 5rem;
     background-color: rgb(172, 240, 163, 0.5);
   }
+
   .header__wrapper{
     display: flex;
     justify-content: space-between;
@@ -143,11 +144,19 @@ img {
     flex-direction: row;
     gap: 2rem;
   }
+  .header__wrapper button {
+    font-style: 7rem;
+    font-weight: 700;
+    background-color: transparent;
+    letter-spacing: .2rem;
+    color: var(--clr-dark);
+  }
+  .header__wrapper button:hover {
+  color: var(--clr-primary);
+  }
   .header h1{
   font-size: 4rem;
   font-weight: 700; 
-
- 
   }
   .header .header__wrapper ul li a{
     font-weight: 400;
@@ -158,14 +167,28 @@ img {
   .header .header__wrapper ul li a:hover{
     color: var(--clr-primary);
     }
-    @media screen and (max-width: 520px){
-      .header .toggle__menu{
+   
+   .header .toggle__menu span{
+    color: var(--clr-primary);
+    width: 3rem;
+    height: .3rem;
+    border: 2px solid;
+    border-radius: 1rem;
+}
+
+
+.header .toggle__menu{
+    display: none;
+}
+
+@media screen and (max-width: 520px){
+    .header .toggle__menu{
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-      }
+    }
     
-      .header .header__nav {
+      .header .header__nav{
         position: fixed;
         top: 0;
         height: 100vh;
@@ -181,28 +204,32 @@ img {
         margin-top: 26rem;
         gap: 2rem;
         right: -100%;
-      }
-      .header__nav.open{
-       right: 0;
-      transition: all 0.5s ease;
-      }
-      .header .header__wrapper img {
+    }
+    .header__nav.open{
+        right: 0;
+        transition: all 0.5s ease;
+    }
+    
+    .header .header__wrapper img {
         width: 10rem;
-      }
-      .toggle__menu.open span:first-child{
-       transform: translate(0,10px)rotate(230deg);
-       transition: .5s ease;
-      }
-      .toggle__menu.open span:nth-child(2){
-      opacity: 0;
-      transition: .5s ease;
-     }
-     .toggle__menu.open span:last-child{
-      transform: translate(0,-7px)rotate(-230deg);
-      transition: .5s ease;
-     }
+    }
+      
+    .toggle__menu.open span:first-child{
+        transform: translate(0, 10px) rotate(230deg);
+        transition: .5s ease;
+      
+    }
+    
+    .toggle__menu.open span:nth-child(2){
+        opacity: 0;
+        transition: .5s ease;
     }
 
+    .toggle__menu.open span:last-child{
+        transform: translate(0, -7px) rotate(-230deg);
+        transition: .5s ease;
+    }
+}
     /* LOMBOK BANNER */
     .lombok__banner--bg{
         background: linear-gradient(  
@@ -254,6 +281,7 @@ img {
          justify-content: center;
           flex-direction: column;
           align-items: center;
+          font-size: 5rem;
         }
       }
         /* LOMBOK CARDS */
@@ -339,6 +367,7 @@ img {
           justify-self: center;
           align-self: center;
           max-width: 55rem;
+          margin-left: 45rem;
         }
        
         .aboutBanner h1{
@@ -366,10 +395,39 @@ img {
             align-items: center;
             
           }
-          .aboutBanner__right{
+          .aboutBanner__right p{
+            margin-top: 10rem;
             display: flex;
-            text-align: center;
+            max-width: 70rem;
             justify-content: center;
+            margin-right: 30rem;
+          }
+         .aboutBanner__right h1{
+          margin-right: 70rem;
+          justify-content: center;
+         text-align: center;
+         align-items: center;
+         margin-top: 50rem;
+          }
+          .aboutBanner h1{
+          
+           margin-top: 60rem;
+            }
+          .aboutBanner__right .bar {
+            width: 5rem;
+            height: .5rem;
+            background-color: var(--clr-dark);
+            margin: 2rem auto;
+            margin-left: 17rem;
+          align-items: center;    
+          }
+          .aboutBanner {
+            padding: 3rem 0;
+            background-color: var(--clr-light);
+            background-image: url('./aboutimg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            min-height:20rem;
           }
         }
 
@@ -382,7 +440,7 @@ background-color: var(--clr-semilight);
    background-color: rgba(74, 112, 68, 0.5);
  }
 .subpage__wrapper{
-  display: grid;
+
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -466,6 +524,7 @@ align-items: center;
   .footer__wrapper{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
   .footer .footer__wrapper ul li a{
     font-weight: 400;
@@ -481,8 +540,9 @@ align-items: center;
     display: flex;
     gap: 1rem;
   }
-  .footer ul li a{
+  .footer__wrapper ul li a{
     color: var(--clr-semilight);
+    flex-direction: column;
   }
   @media screen and (max-width: 520px){
 
@@ -492,15 +552,19 @@ align-items: center;
       flex-direction: column;
       align-items: center;
     }
-    .footer__wrapper ul li a{
+    .footer li a{
      flex-direction: column;
-     display: flex;
-     justify-content: center;
-
+    align-items: center;
+  justify-content: center;
     }
     
   }
+  @media screen and (max-width: 520px){
 
+  .header__nav ul li a{
+    justify-content: center;
+    }
+  }
  /* COMPONENTS */
  .btn{
   background-color: transparent;
